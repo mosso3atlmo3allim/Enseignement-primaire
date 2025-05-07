@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>موقع تربوي</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #e6f0fa; /* خلفية زرقاء فاتحة */
+      color: #5a3e1b;
+      font-family: 'Arial', sans-serif;
+      direction: rtl;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding-top: 60px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 60px;
+      color: #5a3e1b;
+    }
+
+    .button, .link {
+      background-color: #5a3e1b; /* بني غامق */
+      color: #ffffff; /* كتابة بيضاء */
+      border: none;
+      padding: 40px 70px;
+      margin: 30px;
+      font-size: 30px;
+      cursor: pointer;
+      border-radius: 18px;
+      transition: background-color 0.2s ease;
+      text-decoration: none;
+      display: block;
+      width: 450px;
+      max-width: 95%;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    }
+
+    .button:hover, .link:hover {
+      background-color: #4a3115;
+    }
+
+    .section {
+      display: none;
+    }
+
+    #home {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- الصفحة الرئيسية -->
+  <div id="home" class="section">
+    <h1>مرحباً بك في الموقع التربوي</h1>
+    <button class="button" onclick="showSection('teacher')">أستاذ</button>
+    <button class="button" onclick="showSection('student')">تلميذ</button>
+  </div>
+
+  <!-- صفحة الأستاذ -->
+  <div id="teacher" class="section">
+    <h1>وثائق الأستاذ حسب المستوى</h1>
+    <a class="link" href="#">وثائق المستوى الأول</a>
+    <a class="link" href="#">وثائق المستوى الثاني</a>
+    <a class="link" href="#">وثائق المستوى الثالث</a>
+    <a class="link" href="#">وثائق المستوى الرابع</a>
+    <a class="link" href="#">وثائق المستوى الخامس</a>
+    <a class="link" href="#">وثائق المستوى السادس</a>
+    <br>
+    <button class="button" onclick="showSection('home')">رجوع</button>
+  </div>
+
+  <!-- صفحة التلميذ -->
+  <div id="student" class="section">
+    <h1>فضاء التلميذ</h1>
+    <a class="link" href="#">تمارين تفاعلية</a>
+    <a class="link" href="#">فيديوهات تعليمية</a>
+    <a class="link" href="#">ملخصات الدروس</a>
+    <a class="link" href="#">ألعاب تربوية</a>
+    <br>
+    <button class="button" onclick="showSection('home')">رجوع</button>
+  </div>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => section.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+      window.scrollTo(0, 0);
+    }
+  </script>
+
+</body>
+</html>
